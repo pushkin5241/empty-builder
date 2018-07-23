@@ -1,0 +1,105 @@
+* {
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: {
+    family: $font-family;
+    size: $font-size;
+    weight: 300;
+  }
+  color: $text-color;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+body {
+  min-width: 320px;
+  min-height: 600px;
+  height: auto;
+  overflow-x: hidden;
+}
+
+footer, header, nav {
+  display: block;
+}
+
+h1, h2, h3, li, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: #fff;
+  @include transition(all .4s ease);
+  &, &:hover, &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+.abs {
+  position: absolute !important;
+}
+
+.fix {
+  position: fixed !important;
+}
+
+.pull-left {
+  float: left !important
+}
+
+.pull-right {
+  float: right !important
+}
+
+.clearfix {
+  &, &:before, &:after {
+    clear: both;
+  }
+  &:before, &:after {
+    content: '';
+    display: block;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.hide {
+  display: none;
+}
