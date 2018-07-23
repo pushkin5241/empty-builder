@@ -1,7 +1,7 @@
 const {mix} = require('laravel-mix');
 let ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-mix.setPublicPath('public');
+mix.setPublicPath('dist');
 
 mix.autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],
@@ -24,10 +24,9 @@ mix.webpackConfig({
 
 mix.disableNotifications();
 
-mix.copy('src', 'public', false);
-mix.copy('resources/images', 'public/images', false);
-mix.copy('resources/fonts', 'public/fonts', false);
+mix.copy('src', 'dist', false);
+mix.copy('resources/images', 'dist/images', false);
+mix.copy('resources/fonts', 'dist/fonts', false);
 
-mix.sass('resources/styles/template.scss', 'public/css')
-    .sass('resources/styles/media.scss', 'public/css')
-    .js('resources/scripts/app.js', 'public/scripts');
+mix.sass('resources/styles/app.scss', 'dist/css')
+    .js('resources/scripts/app.js', 'dist/scripts');
