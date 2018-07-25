@@ -9,7 +9,6 @@
 }
 
 body, html {
-  height: 100%;
   margin: 0;
   font: {
     family: $font-family;
@@ -21,16 +20,24 @@ body, html {
 
 html {
   margin-top: 0 !important;
+  height: 100%;
+  min-height: 600px;
 }
 
 body {
   min-width: 320px;
-  min-height: 600px;
   height: auto;
+  min-height: 100%;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-footer, header, nav {
+.main-content{
+  flex: 1 1 auto;
+}
+
+header, footer, nav {
   display: block;
 }
 
