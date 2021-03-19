@@ -1,20 +1,20 @@
 const {mix} = require('laravel-mix');
 
-mix.setPublicPath('dist');
+mix.disableNotifications();
 
-/*mix.autoload({
-    jquery: ['$', 'window.jQuery', 'jQuery'],
-});*/
+mix.setPublicPath('dist');
 
 mix.options({
     processCssUrls: false,
 });
 
-mix.disableNotifications();
+mix.autoload({
+    jquery: ['$', 'window.jQuery', 'jQuery'],
+});
 
 mix.copy('src', 'dist', false);
 mix.copy('resources/images', 'dist/images', false);
 mix.copy('resources/fonts', 'dist/fonts', false);
 
-mix.sass('resources/styles/app.scss', 'dist/css')
-    .js('resources/scripts/app.js', 'dist/scripts');
+mix.sass('resources/styles/app.scss', 'dist/css');
+mix.js('resources/scripts/app.js', 'dist/scripts').extract();
